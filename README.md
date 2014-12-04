@@ -37,7 +37,7 @@ Another thing you might want to do is, to mark the output resource dictionary de
 
 Feedback
 ----------
-So hopefully you like it and share your impressions with us! Adré Lanninger & David C. Thömmes
+So hopefully you like it and share your impressions with us! André Lanninger & David C. Thömmes
 
 License
 ----------
