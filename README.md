@@ -25,11 +25,11 @@ Parameters of the ResMerger
 Styling Project?
 ----------
 The styling project contains all WPF resources like colors, brushes, styles and control templates.
-Typically, all resources are distributed over many resource dictionaries and there is one big resource dictionary.
+Typically, all resources are distributed over many resource dictionaries and there is one big resource dictionary LookAndFeel.xaml.
 
 ![picture alt](http://www.davidchristian.de/images/stylingproject.png "Styling project")
 
-FullLookAndFeel.xaml
+FullLookAndFeel.xaml (Output)
 ----------
 Another thing you might want to do is, to mark the output resource dictionary dependent upon the source file! (which really kills it). To do this just edit the project file like this:
 
@@ -37,7 +37,7 @@ Another thing you might want to do is, to mark the output resource dictionary de
 
 Feedback
 ----------
-Thats really it! So hopefully you like it and share your impressions with us! Adré Lanninger & David C. Thömmes
+So hopefully you like it and share your impressions with us! Adré Lanninger & David C. Thömmes
 
 License
 ----------
