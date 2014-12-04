@@ -8,6 +8,7 @@ Simply include this big resource dictionary inside your App.xaml and feel a real
 
 Howto
 ----------
+* Build the ResMerger project with Visual Studio
 * Copy the ResMerger.exe to your solution folder (Outside Visual Studio)
 * Maybe create a subfolder called Tools
 * Edit the pre build event of your styling project and add a call to the ResMeger.exe
