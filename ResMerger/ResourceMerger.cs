@@ -138,13 +138,32 @@ namespace ResMerger
                     outputDoc.Root.SetAttributeValue(attribute.Name, attribute.Value);
 
                 // add elements
-                outputDoc.Root.Add(item.Value.Document.Root.Elements().Where(e => !e.Name.LocalName.StartsWith(resDictString))); 
+                outputDoc.Root.Add(item.Value.Document.Root.Elements().Where(e => !e.Name.LocalName.StartsWith(resDictString)));
+            }
+
+            using (var ms = new MemoryStream())
+            {
+                outputDoc.Save(ms);
+
+                if (OutputEqualsExistingFileContent(Path.Combine(projectPath, relativeOutputFilePath), ms.ToArray()))
+                    return;
             }
 
             // save file
             outputDoc.Save(projectPath + relativeOutputFilePath);
         }
 
+        private static bool OutputEqualsExistingFileContent(string targetFileName, IEnumerable<byte> newFileContent)
+        {
+            var normalizedFileName = targetFileName.Replace("/", "\\");
+
+            // don't check for equality if the FullLookAndFeel.xaml doesn't exist already
+            if (!File.Exists(normalizedFileName))
+                return false;
+
+            var existingFileContentBytes = File.ReadAllBytes(normalizedFileName);
+            return newFileContent.SequenceEqual(existingFileContentBytes); ;
+        }
 
         /// <summary>
         /// Get a collection of resource dictionary source paths respecting the dependencies 
