@@ -12,7 +12,8 @@ Howto
 * Copy the ResMerger.exe to your solution folder (Outside Visual Studio)
 * Maybe create a subfolder called Tools
 * Edit the pre build event of your styling project and add a call to the ResMeger.exe
-  * $(SolutionDir)Tools\ResMerger\ResMerger.exe" "$(ProjectDir)\" $(ProjectName) "/Source.xaml" "/Output.xaml"
+  * "$(SolutionDir)Tools\ResMerger\ResMerger.exe" "$(ProjectDir)\" $(ProjectName) "/Source.xaml" "/Output.xaml"
+  * Don't miss the "" signs
 
 ![picture alt](http://www.davidchristian.de/images/prebuild.png "Prebuild")
 
